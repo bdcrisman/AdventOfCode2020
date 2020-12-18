@@ -39,7 +39,7 @@ namespace Day5
                 return min;
 
             int mid = (max - min) / 2 + min;
-            return (s[sIndex] == 'F')
+            return (s[sIndex] == 'F' || s[sIndex] == 'L')
                 ? GetSeatID(s, sIndex + 1, min, mid)
                 : GetSeatID(s, sIndex + 1, mid + 1, max);
         }
