@@ -349,7 +349,7 @@ namespace Day3
         static void Main(string[] args)
         {
             var treeCount = new PartOne().CountTreesUsingSlopeRightThreeDownOne(PuzzleInput);
-            Console.WriteLine($"Number of trees encountered in part 1: {treeCount}");
+            Console.WriteLine($"Part 1: Number of trees encountered: {treeCount}");
 
             var counts = new List<long>
             {
@@ -361,7 +361,7 @@ namespace Day3
             };
 
             long product = counts.Aggregate(1L, (x, y) => x * y);            
-            Console.WriteLine($"Number of trees encountered in part 2: {product}");
+            Console.WriteLine($"Part 2: Number of trees encountered: {product}");
         }
     }
 }

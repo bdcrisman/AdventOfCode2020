@@ -1034,10 +1034,10 @@ namespace Day4
         static void Main(string[] args)
         {
             var numValidPassportsPartOne = new PartOne().NumberOfValidPassports(PuzzleInput);
-            Console.WriteLine($"Number of valid passports part one: {numValidPassportsPartOne}");
+            Console.WriteLine($"Part 1: Number of valid passports: {numValidPassportsPartOne}");
 
             var numValidPassportsPartTwo = new PartTwo().NumberOfValidPassports(PuzzleInput);
-            Console.WriteLine($"Number of valid passports part one: {numValidPassportsPartTwo}");
+            Console.WriteLine($"Part 2: Number of re-validated passports: {numValidPassportsPartTwo}");
         }
     }
 }
