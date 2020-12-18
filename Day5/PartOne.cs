@@ -35,7 +35,7 @@ namespace Day5
 
         private int GetSeatID(string s, int sIndex, int min, int max)
         {
-            if (sIndex >= s.Length || min < 0 || max < 0 || min == max)
+            if (sIndex >= s.Length || min == max || min < 0 || max < 0)
                 return min;
 
             int mid = (max - min) / 2 + min;
