@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Day5
 {
@@ -825,7 +827,10 @@ namespace Day5
 
         static void Main(string[] args)
         {
-            Console.WriteLine($"Highest seat ID part 1: {new PartOne().GetHighestSeatID(PuzzleInput)}");
+            var p1 = new PartOne();
+            var highestID = p1.GetHighestSeatID(PuzzleInput);
+            Console.WriteLine($"Highest seat ID part 1: {highestID}");
+            Console.WriteLine($"My seat ID part 2: {new PartTwo().GetSeatID(p1.IDs)}");
         }
     }
 }
