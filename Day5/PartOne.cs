@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace Day5
 {
     public class PartOne
     {
-        const int RowCount = 128;
-        const int ColCount = 8;
-        const int Magic = 8;
+        const int RowCount = 127;
+        const int ColCount = 7;
+        const int MagicValue = 8;
 
         public int GetHighestSeatID(string puzzleInput)
         {
@@ -28,38 +25,23 @@ namespace Day5
                     highestSeatID = id;
             }
 
-            return lines.Count();
+            return highestSeatID;
         }
 
         private int GetSeatID(string s)
         {
-            var row = GetRow(s, 0, 0, RowCount);
-            Console.WriteLine(row);
-            return 0;
-            //return GetRow(s.Substring(0, 7)`) * Magic + GetRow(s.Substring(7);
+            return GetSeatID(s.Substring(0, 7), 0, 0, RowCount) * MagicValue + GetSeatID(s.Substring(7), 0, 0, ColCount);
         }
 
-        private int GetRow(string s, int sIndex, int min, int max)
+        private int GetSeatID(string s, int sIndex, int min, int max)
         {
             if (sIndex >= s.Length || min < 0 || max < 0 || min == max)
                 return min;
 
-            int mid = (max - min) / 2 + 1;
+            int mid = (max - min) / 2 + min;
             return (s[sIndex] == 'F')
-                ? GetRow(s, sIndex + 1, min, mid)
-                : GetRow(s, sIndex + 1, mid, max);
-        }
-
-        private int GetCol(string s)
-        {
-            var col = 0;
-            var start = ColCount;
-            for (var i = 0; i < s.Length; ++i)
-            {
-                start /= 2;
-            }
-
-            return col;
+                ? GetSeatID(s, sIndex + 1, min, mid)
+                : GetSeatID(s, sIndex + 1, mid + 1, max);
         }
     }
 }

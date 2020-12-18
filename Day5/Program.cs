@@ -825,7 +825,7 @@ namespace Day5
 
         static void Main(string[] args)
         {
-            Console.WriteLine(new PartOne().GetHighestSeatID(TestInput));
+            Console.WriteLine($"Highest seat ID part 1: {new PartOne().GetHighestSeatID(PuzzleInput)}");
         }
     }
 }
