@@ -8,7 +8,8 @@ namespace Day6
         static void Main(string[] args)
         {
             var input = File.ReadAllText("input.txt");
-            Console.WriteLine($"Part 1: Sum of yes answers from groups: {new PartOne().SumYesAnswersFromGroups(input)}");
+            Console.WriteLine($"Part 1: Sum of anyone yes answers from groups: {new PartOne().SumAnyoneYesAnswers(input)}");
+            Console.WriteLine($"Part 2: Sum of everyone yes answers from groups: {new PartTwo().SumEveryoneYesAnswers(input)}");
         }
     }
 }

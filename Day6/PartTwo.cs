@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Day6
 {
-    public class PartOne
+    public class PartTwo
     {
-        public int SumAnyoneYesAnswers(string input)
+        public int SumEveryoneYesAnswers(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
                 return 0;
@@ -38,7 +38,15 @@ namespace Day6
             if (lines == null || lines.Count <= 0)
                 return 0;
 
-            return string.Join("", lines).Distinct().Count();
+            var start = lines[0].Select(x => x.ToString());
+
+            for(var i = 1; i < lines.Count; ++i)
+            {
+                var line = lines[i].Select(x => x.ToString());
+                start = start.Intersect(line);
+            }
+
+            return string.Join("", start).Length;
         }
     }
 }
